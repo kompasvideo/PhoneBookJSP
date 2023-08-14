@@ -28,7 +28,7 @@ public class PhoneBookController {
     @PostMapping(value = "/deleteRecord")
     public String deleteRecord(@RequestParam("id") int id, Model model) {
         phoneBookService.deleteRecordToPhoneBooks(id);
-        return showFirstView(model);
+        return "redirect:/";
     }
 
     @PostMapping(value = "/editRecord")
@@ -40,7 +40,7 @@ public class PhoneBookController {
     @PostMapping(value = "/editSaveRecord")
     public String editSaveRecord(@ModelAttribute("phoneBook") PhoneBook phoneBook, Model model) {
         phoneBookService.editRecordToPhoneBooks(phoneBook);
-        return showFirstView(model);
+        return "redirect:/";
     }
     @GetMapping("/viewAddRecord")
     public String viewAddRecord(Model model) {
@@ -50,7 +50,7 @@ public class PhoneBookController {
     @PostMapping(value = "/addSaveRecord")
     public String addSaveRecord(@ModelAttribute("phoneBook") PhoneBook phoneBook, Model model) {
         phoneBookService.addRecordToPhoneBooks(phoneBook);
-        return showFirstView(model);
+        return "redirect:/";
     }
 
 }
